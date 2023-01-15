@@ -1,1 +1,1 @@
-# SaaSample
+# Single Activity Architecture Sample
