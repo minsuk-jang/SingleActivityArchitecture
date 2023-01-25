@@ -1,5 +1,6 @@
 package com.example.saasample.main
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -18,6 +19,7 @@ class MainFragmentViewModel @Inject constructor() : ViewModel() {
 
     fun load() {
         viewModelScope.launch {
+            Log.e("jms8732", "load", )
             _items.update {
                 buildList {
                     repeat(10) {

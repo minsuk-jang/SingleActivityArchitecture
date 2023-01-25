@@ -1,6 +1,7 @@
 package com.example.saasample.main
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -23,7 +24,6 @@ class MainFragment : BaseFragment<FragmentMainBinding>(R.layout.fragment_main) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         bindRecyclerView()
 
         initLoad()
@@ -31,6 +31,7 @@ class MainFragment : BaseFragment<FragmentMainBinding>(R.layout.fragment_main) {
     }
 
     private fun initLoad() {
+        Log.e("jms8732", "initLoad: ", )
         vm.load()
     }
 
@@ -48,10 +49,10 @@ class MainFragment : BaseFragment<FragmentMainBinding>(R.layout.fragment_main) {
         repeatOnLifecycle {
             launch {
                 vm.items.collectLatest {
+                    Log.e("jms8732", "observe: $it", )
                     adapter.submitList(it)
                 }
             }
         }
     }
-
 }
