@@ -1,4 +1,4 @@
-package com.example.saasample
+package com.example.ssatest
 
 import org.junit.Test
 

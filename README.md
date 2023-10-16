@@ -1,1 +1,0 @@
-# Single Activity Architecture Sample
